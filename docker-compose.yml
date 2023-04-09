@@ -1,8 +1,7 @@
 version: '3.9'
 services:
   app:
-    context: .
-    build: .Dockerfile
+    build: .
     restart: always
     ports:
       - "80:8080"
