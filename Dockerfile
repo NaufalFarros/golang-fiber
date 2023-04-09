@@ -1,7 +1,7 @@
 FROM golang:1.17-alpine
 
 # set working directory
-WORKDIR /app
+WORKDIR /golang-fiber
 
 # install Comstreak Air
 RUN apk update && apk add curl git && \
