@@ -2,7 +2,7 @@
 FROM golang:latest
 
 # Set working directory
-WORKDIR /app
+WORKDIR .
 
 # Copy go mod and sum files
 COPY go.mod go.sum ./
