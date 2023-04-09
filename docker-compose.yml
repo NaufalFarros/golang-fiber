@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   app:
-    build: /app
+    build: .
     restart: always
     ports:
       - "80:8080"
@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: GodhandLND356
       POSTGRES_DB: golang_posgres
   air:
-    image: <nama-image-air>
+    image: cosmtrek/air
     restart: always
     ports:
       - "8080:8080"
