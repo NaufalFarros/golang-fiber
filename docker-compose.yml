@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "80:8080"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: faros
+      DB_PASSWORD: GodhandLND356  
+      DB_NAME: golang_posgres
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: faros
+      POSTGRES_PASSWORD: GodhandLND356
+      POSTGRES_DB: golang_posgres
+  air:
+    image: <nama-image-air>
+    restart: always
+    ports:
+      - "8080:8080"
+      - "35729:35729"
+    volumes:
+      - .:/app
+    command: ["air", "-c", ".air.toml"]
