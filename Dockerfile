@@ -4,9 +4,9 @@ FROM golang:1.17-alpine
 WORKDIR /golang-fiber
 
 # install Comstreak Air
-RUN apk update && apk add curl git && \
-    curl -sL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b /usr/local/bin
-
+# Install air and set it up
+RUN curl -sL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b /usr/local/bin && \
+    chmod +x /usr/local/bin/air
 # install PostgreSQL client
 RUN apk add --no-cache postgresql-client
 
