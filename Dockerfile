@@ -12,4 +12,4 @@ RUN apk update && apk add curl git && \
     curl -sL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b /usr/local/bin && \
     chmod +x /usr/local/bin/air
 
-CMD ["/golang-fiber_app_1"]
+CMD ["air"]
